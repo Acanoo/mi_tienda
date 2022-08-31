@@ -38,7 +38,7 @@ switch ($_GET["op"]) {
 		break;
 
 	case 'listarDetalle':
-		//recibimos el idingreso
+		//recibe el idingreso
 		$id=$_GET['id'];
 
 		$rspta=$ingreso->listarDetalle($id);
@@ -69,7 +69,7 @@ switch ($_GET["op"]) {
          <th></th>
          <th></th>
          <th></th>
-         <th><h4 id="total">S/. '.$total.'</h4><input type="hidden" name="total_compra" id="total_compra"></th>
+         <th><h4 id="total">Q/. '.$total.'</h4><input type="hidden" name="total_compra" id="total_compra"></th>
        </tfoot>';
 		break;
 
@@ -90,9 +90,9 @@ switch ($_GET["op"]) {
               );
 		}
 		$results=array(
-             "sEcho"=>1,//info para datatables
-             "iTotalRecords"=>count($data),//enviamos el total de registros al datatable
-             "iTotalDisplayRecords"=>count($data),//enviamos el total de registros a visualizar
+             "sEcho"=>1,
+             "iTotalRecords"=>count($data),
+             "iTotalDisplayRecords"=>count($data),
              "aaData"=>$data); 
 		echo json_encode($results);
 		break;
@@ -128,11 +128,10 @@ switch ($_GET["op"]) {
 		}
 		$results=array(
              "sEcho"=>1,//info para datatables
-             "iTotalRecords"=>count($data),//enviamos el total de registros al datatable
-             "iTotalDisplayRecords"=>count($data),//enviamos el total de registros a visualizar
+             "iTotalRecords"=>count($data),
+             "iTotalDisplayRecords"=>count($data),
              "aaData"=>$data); 
 		echo json_encode($results);
 
 				break;
 }
- ?>

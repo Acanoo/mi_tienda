@@ -1,20 +1,19 @@
 <?php 
-//incluir la conexion de base de datos
+
 require "../config/Conexion.php";
 class Persona{
 
 
-	//implementamos nuestro constructor
+	
 public function __construct(){
 
 }
 
-//metodo insertar regiustro
+
 public function insertar($tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email){
 	$sql="INSERT INTO persona (tipo_persona,nombre,tipo_documento,num_documento,direccion,telefono,email) VALUES ('$tipo_persona','$nombre','$tipo_documento','$num_documento','$direccion','$telefono','$email')";
 	return ejecutarConsulta($sql);
 }
-
 
 
 public function editar($idpersona,$tipo_persona,$nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email){

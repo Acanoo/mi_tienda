@@ -46,9 +46,9 @@ switch ($_GET["op"]) {
               );
 		}
 		$results=array(
-             "sEcho"=>1,//info para datatables
-             "iTotalRecords"=>count($data),//enviamos el total de registros al datatable
-             "iTotalDisplayRecords"=>count($data),//enviamos el total de registros a visualizar
+             "sEcho"=>1,
+             "iTotalRecords"=>count($data),
+             "iTotalDisplayRecords"=>count($data),
              "aaData"=>$data); 
 		echo json_encode($results);
 		break;

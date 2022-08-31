@@ -1,5 +1,5 @@
-<?php 
-//ip de la pc servidor base de datos
+<?php
+
 define("DB_HOST", "localhost");
 
 // nombre de la base de datos
@@ -17,5 +17,3 @@ define("DB_ENCODE", "utf8");
 
 //nombre del proyecto
 define("PRO_NOMBRE", "ITVentas");
- 
- ?>
