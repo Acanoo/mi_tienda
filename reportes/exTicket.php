@@ -21,7 +21,7 @@ if (!isset($_SESSION['nombre'])) {
 
 		<body onload="window.print();">
 			<?php
-			// incluimos la clase venta
+			// inclue la clase venta
 			require_once "../modelos/Venta.php";
 
 			$venta = new Venta();
@@ -31,12 +31,12 @@ if (!isset($_SESSION['nombre'])) {
 
 			$reg = $rspta->fetch_object();
 
-			//establecemos los datos de la empresa
-			$empresa = "Auto Repuetos Richard";
-			$documento = "3134739780501";
+			//establece los datos de la empresa
+			$empresa = "Auto Repuestos Richard";
+			$documento = "313473930903";
 			$direccion = "Escuintla";
 			$telefono = "40475290";
-			$email = "Autorepuestosrichard@corporacion.com.gt";
+			$email = "autorepuetosrichard@corporacion.com";
 			?>
 			<div class="zona_impresion">
 				<!--codigo imprimir-->
@@ -92,7 +92,7 @@ if (!isset($_SESSION['nombre'])) {
 						echo "<tr>";
 						echo "<td>" . $regd->cantidad . "</td>";
 						echo "<td>" . $regd->articulo . "</td>";
-						echo "<td align='right'>S/. " . $regd->subtotal . "</td>";
+						echo "<td align='right'>Q/. " . $regd->subtotal . "</td>";
 						echo "</tr>";
 						$cantidad += $regd->cantidad;
 					}
@@ -114,10 +114,10 @@ if (!isset($_SESSION['nombre'])) {
 						<td colspan="3" align="center">¡Gracias por su compra!</td>
 					</tr>
 					<tr>
-						<td colspan="3" align="center">Auto Repuetos Richard</td>
+						<td colspan="3" align="center">Auto Repuestos Richard</td>
 					</tr>
 					<tr>
-						<td colspan="3" align="center">Guatemala</td>
+						<td colspan="3" align="center">Escuintla</td>
 					</tr>
 				</table>
 				<br>

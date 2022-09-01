@@ -25,7 +25,7 @@ class EnLetras
     else
       $Signo = "";
 
-    if (intval(number_format($x, 2, '.', '')) != $x) //<- si tiene decimales 
+    if (intval(number_format($x, 2, '.', '')) != $x) //<- averiguar si tiene decimales 
       $s = number_format($x, 2, '.', '');
     else
       $s = number_format($x, 2, '.', '');
@@ -50,14 +50,14 @@ class EnLetras
     if (substr($s, -9, 9) == "Millones " || substr($s, -7, 7) == "Millón ")
       $s = $s . "de ";
     if ($this->substituir_un_mil_por_mil) {
-
+      // En el castellano de España en vez de decir "Un Mil" se dice "Mil"
 
       if (substr($s, 0, 6) == "Un Mil") {
         $s = substr($s, 3);
       }
     }
 
-
+    // para compatibilizar la clase con la version antigua
     if (!$this->tratar_decimales) {
       // ignora los decimales i los muestra como XX/100
 
@@ -106,7 +106,7 @@ class EnLetras
       $i = $i - 1;
     }
 
-    //---------------------Filtro Mil ------------------------------ 
+    //--------------------- GoSub FiltroMil ------------------------------ 
     $Rtn = str_replace(" Mil Mil", " Un Mil", $Rtn);
     while (1) {
       $Ptr = strpos($Rtn, "Mil ");
@@ -117,7 +117,7 @@ class EnLetras
           break;
       } else break;
     }
-    //---------------------Filtro Ciento ------------------------------ 
+    //--------------------- GoSub FiltroCiento ------------------------------ 
     $Ptr = -1;
     do {
       $Ptr = strpos($Rtn, "Cien ", $Ptr + 1);
@@ -314,4 +314,5 @@ class EnLetras
     }
     return ($Rtn . $t);
   }
-}
+} 
+//-------------- Programa principal ------------------------ 

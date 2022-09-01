@@ -76,23 +76,23 @@ switch ($_GET["op"]) {
 
 	$results=array(
              "sEcho"=>1,//info para datatables
-             "iTotalRecords"=>count($data),
-             "iTotalDisplayRecords"=>count($data),
+             "iTotalRecords"=>count($data),//enviamos el total de registros al datatable
+             "iTotalDisplayRecords"=>count($data),//enviamos el total de registros a visualizar
              "aaData"=>$data); 
 	echo json_encode($results);
 	break;
 
 	case 'permisos':
-			//obtiene toodos los permisos de la tabla permisos
+			//obtenemos toodos los permisos de la tabla permisos
 	require_once "../modelos/Permiso.php";
 	$permiso=new Permiso();
 	$rspta=$permiso->listar();
-//obtiene permisos asigandos
+//obtener permisos asigandos
 	$id=$_GET['id'];
 	$marcados=$usuario->listarmarcados($id);
 	$valores=array();
 
-//almacena permisos asigandos
+//almacenar permisos asigandos
 	while ($per=$marcados->fetch_object()) {
 		array_push($valores, $per->idpermiso);
 	}
@@ -104,7 +104,7 @@ switch ($_GET["op"]) {
 	break;
 
 	case 'verificar':
-	//valida si el usuario tiene acceso al sistema
+	//validar si el usuario tiene acceso al sistema
 	$logina=$_POST['logina'];
 	$clavea=$_POST['clavea'];
 
@@ -114,32 +114,32 @@ switch ($_GET["op"]) {
 	$rspta=$usuario->verificar($logina, $clavehash);
 
 	$fetch=$rspta->fetch_object();
-		if (isset($fetch)) {
-		# Declara la variables de sesion
+	if (isset($fetch)) {
+		# Declaramos la variables de sesion
 		$_SESSION['idusuario']=$fetch->idusuario;
 		$_SESSION['nombre']=$fetch->nombre;
 		$_SESSION['imagen']=$fetch->imagen;
 		$_SESSION['login']=$fetch->login;
 
-		//obtiene los permisos
+		//obtenemos los permisos
 		$marcados=$usuario->listarmarcados($fetch->idusuario);
 
-		//declara el array para almacenar todos los permisos
+		//declaramos el array para almacenar todos los permisos
 		$valores=array();
 
-		//almacena los permisos marcados en al array
+		//almacenamos los permisos marcados en al array
 		while ($per = $marcados->fetch_object()) {
 			array_push($valores, $per->idpermiso);
 		}
 
-		//determina lo accesos al usuario
-		in_array(1, $valores)?$_SESSION['almacen']=1:$_SESSION['almacen']=0;
-		in_array(2, $valores)?$_SESSION['compras']=1:$_SESSION['compras']=0;
-		in_array(3, $valores)?$_SESSION['ventas']=1:$_SESSION['ventas']=0;
-		in_array(4, $valores)?$_SESSION['acceso']=1:$_SESSION['acceso']=0;
-		in_array(5, $valores)?$_SESSION['consultac']=1:$_SESSION['consultac']=0;
-		in_array(6, $valores)?$_SESSION['consultav']=1:$_SESSION['consultav']=0;
-			in_array(7, $valores) ? $_SESSION['mecanico'] = 1 : $_SESSION['mecanico'] = 0;
+		//determinamos lo accesos al usuario
+		in_array(1, $valores)?$_SESSION['escritorio']=1:$_SESSION['escritorio']=0;
+		in_array(2, $valores)?$_SESSION['almacen']=1:$_SESSION['almacen']=0;
+		in_array(3, $valores)?$_SESSION['compras']=1:$_SESSION['compras']=0;
+		in_array(4, $valores)?$_SESSION['ventas']=1:$_SESSION['ventas']=0;
+		in_array(5, $valores)?$_SESSION['acceso']=1:$_SESSION['acceso']=0;
+		in_array(6, $valores)?$_SESSION['consultac']=1:$_SESSION['consultac']=0;
+		in_array(7, $valores)?$_SESSION['consultav']=1:$_SESSION['consultav']=0;
 
 	}
 	echo json_encode($fetch);

@@ -1,7 +1,9 @@
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
+      <b>Version</b> 0.0.1
     </div>
-    <strong>Taller richard -Todos los derechos reservados</a>.</strong>
+    <strong>Autorepuestos Richard </a>.</strong> Todo los derechos
+    reservados.
   </footer>
 
   <!-- jQuery 3 -->
@@ -10,7 +12,8 @@
   <!-- jQuery UI 1.11.4 -->
   <!-- Bootstrap 3.3.7 -->
   <script src="../public/js/bootstrap.min.js"></script>
- 
+  <!-- Morris.js charts -->
+  <!-- AdminLTE App -->
   <script src="../public/js/adminlte.min.js"></script>
   <script src="../public/datatables/buttons.colVis.min.js"></script>
   <script src="../public/datatables/buttons.html5.min.js"></script>

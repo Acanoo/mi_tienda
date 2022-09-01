@@ -39,9 +39,9 @@
        <!-- Logo -->
        <a href="escritorio.php" class="logo">
          <!-- mini logo for sidebar mini 50x50 pixels -->
-         <span class="logo-mini"><b>SIS</b> V</span>
+         <span class="logo-mini"><b>SISTEMA DE</b>VENTAS</span>
          <!-- logo for regular state and mobile devices -->
-         <span class="logo-lg"><b>Autoventas</b></span>
+         <span class="logo-lg"><b>SISTEMA</b>
        </a>
        <!-- Header Navbar: style can be found in header.less -->
        <nav class="navbar navbar-static-top">
@@ -63,11 +63,15 @@
                  <li class="user-header">
                    <img src="../files/usuarios/<?php echo $_SESSION['imagen']; ?>" class="img-circle" alt="User Image">
 
+                   <p>
+                     PENDIENTE QUE MUESTRE EL NOMBRE DEL USUARIO QUE INGRESA -->
+                     <small>HORA DE INGRESO</small>
+                   </p>
                  </li>
                  <!-- Menu Footer-->
                  <li class="user-footer">
                    <div class="pull-left">
-                     <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                     <a href="#" ,{idusuario : idusuario}" class="btn btn-default btn-flat">Perfil</a>
                    </div>
                    <div class="pull-right">
                      <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat">Salir</a>

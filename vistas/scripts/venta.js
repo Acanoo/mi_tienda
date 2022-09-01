@@ -9,7 +9,7 @@ function init() {
         guardaryeditar(e);
     });
 
-    //carga los items al select cliente
+    //cargamos los items al select cliente
     $.post("../ajax/venta.php?op=selectCliente", function(r) {
         $("#idcliente").html(r);
         $('#idcliente').selectpicker('refresh');
@@ -30,14 +30,14 @@ function limpiar() {
     $(".filas").remove();
     $("#total").html("0");
 
-    //obtiene la fecha actual
+    //obtenemos la fecha actual
     var now = new Date();
     var day = ("0" + now.getDate()).slice(-2);
     var month = ("0" + (now.getMonth() + 1)).slice(-2);
     var today = now.getFullYear() + "-" + (month) + "-" + (day);
     $("#fecha_hora").val(today);
 
-    //marca el primer tipo_documento
+    //marcamos el primer tipo_documento
     $("#tipo_comprobante").val("Boleta");
     $("#tipo_comprobante").selectpicker('refresh');
 
@@ -75,9 +75,9 @@ function cancelarform() {
 //funcion listar
 function listar() {
     tabla = $('#tbllistado').dataTable({
-        "aProcessing": true, //activa el procedimiento del datatable
+        "aProcessing": true, //activamos el procedimiento del datatable
         "aServerSide": true, //paginacion y filrado realizados por el server
-        dom: 'Bfrtip', //define los elementos del control de la tabla
+        dom: 'Bfrtip', //definimos los elementos del control de la tabla
         buttons: [
             'copyHtml5',
             'excelHtml5',
@@ -102,9 +102,9 @@ function listar() {
 
 function listarArticulos() {
     tabla = $('#tblarticulos').dataTable({
-        "aProcessing": true, //activa el procedimiento del datatable
+        "aProcessing": true, //activamos el procedimiento del datatable
         "aServerSide": true, //paginacion y filrado realizados por el server
-        dom: 'Bfrtip', //define los elementos del control de la tabla
+        dom: 'Bfrtip', //definimos los elementos del control de la tabla
         buttons: [
 
         ],
@@ -186,8 +186,8 @@ function anular(idventa) {
     })
 }
 
-//declara variables necesarias para trabajar con las compras y sus detalles
-var impuesto = 0;
+//declaramos variables necesarias para trabajar con las compras y sus detalles
+var impuesto = 18;
 var cont = 0;
 var detalles = 0;
 

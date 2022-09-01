@@ -1,16 +1,18 @@
 <?php 
-
+//incluir la conexion de base de datos
 require "../config/Conexion.php";
 class Venta{
+
 
 
 public function __construct(){
 
 }
 
+//metodo insertar registro
 public function insertar($idcliente,$idusuario,$tipo_comprobante,$serie_comprobante,$num_comprobante,$fecha_hora,$impuesto,$total_venta,$idarticulo,$cantidad,$precio_venta,$descuento){
 	$sql="INSERT INTO venta (idcliente,idusuario,tipo_comprobante,serie_comprobante,num_comprobante,fecha_hora,impuesto,total_venta,estado) VALUES ('$idcliente','$idusuario','$tipo_comprobante','$serie_comprobante','$num_comprobante','$fecha_hora','$impuesto','$total_venta','Aceptado')";
-	
+	//return ejecutarConsulta($sql);
 	 $idventanew=ejecutarConsulta_retornarID($sql);
 	 $num_elementos=0;
 	 $sw=true;
@@ -31,7 +33,7 @@ public function anular($idventa){
 }
 
 
-//metodo para mostrar los datos de un registro a modificar
+//implementa un metodo para mostrar los datos de un registro a modificar
 public function mostrar($idventa){
 	$sql="SELECT v.idventa,DATE(v.fecha_hora) as fecha,v.idcliente,p.nombre as cliente,u.idusuario,u.nombre as usuario, v.tipo_comprobante,v.serie_comprobante,v.num_comprobante,v.total_venta,v.impuesto,v.estado FROM venta v INNER JOIN persona p ON v.idcliente=p.idpersona INNER JOIN usuario u ON v.idusuario=u.idusuario WHERE idventa='$idventa'";
 	return ejecutarConsultaSimpleFila($sql);

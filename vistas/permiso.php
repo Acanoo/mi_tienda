@@ -1,5 +1,5 @@
 <?php 
-//activa almacenamiento en el buffer
+//activamos almacenamiento en el buffer
 ob_start();
 session_start();
 if (!isset($_SESSION['nombre'])) {

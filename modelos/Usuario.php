@@ -1,13 +1,15 @@
 <?php 
+//incluir la conexion de base de datos
 require "../config/Conexion.php";
 class Usuario{
 
 
+	
 public function __construct(){
 
 }
 
-//metodo insertar registro
+//metodo insertar regiustro
 public function insertar($nombre,$tipo_documento,$num_documento,$direccion,$telefono,$email,$cargo,$login,$clave,$imagen,$permisos){
 	$sql="INSERT INTO usuario (nombre,tipo_documento,num_documento,direccion,telefono,email,cargo,login,clave,imagen,condicion) VALUES ('$nombre','$tipo_documento','$num_documento','$direccion','$telefono','$email','$cargo','$login','$clave','$imagen','1')";
 	//return ejecutarConsulta($sql);

@@ -1,9 +1,10 @@
 <?php 
-
+//incluir la conexion de base de datos
 require "../config/Conexion.php";
 class Consultas{
 
 
+	//implementa constructor
 public function __construct(){
 
 }

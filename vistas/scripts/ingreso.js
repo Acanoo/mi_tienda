@@ -9,7 +9,7 @@ function init() {
         guardaryeditar(e);
     });
 
-    //carga los items al select proveedor
+    //cargamos los items al select proveedor
     $.post("../ajax/ingreso.php?op=selectProveedor", function(r) {
         $("#idproveedor").html(r);
         $('#idproveedor').selectpicker('refresh');
@@ -37,7 +37,7 @@ function limpiar() {
     var today = now.getFullYear() + "-" + (month) + "-" + (day);
     $("#fecha_hora").val(today);
 
-    //marca el primer tipo_documento
+    //marcamos el primer tipo_documento
     $("#tipo_comprobante").val("Boleta");
     $("#tipo_comprobante").selectpicker('refresh');
 
@@ -75,9 +75,9 @@ function cancelarform() {
 //funcion listar
 function listar() {
     tabla = $('#tbllistado').dataTable({
-        "aProcessing": true, //activa el procedimiento del datatable
+        "aProcessing": true, //activamos el procedimiento del datatable
         "aServerSide": true, //paginacion y filrado realizados por el server
-        dom: 'Bfrtip', //define los elementos del control de la tabla
+        dom: 'Bfrtip', //definimos los elementos del control de la tabla
         buttons: [
             'copyHtml5',
             'excelHtml5',
@@ -102,9 +102,9 @@ function listar() {
 
 function listarArticulos() {
     tabla = $('#tblarticulos').dataTable({
-        "aProcessing": true, //activa el procedimiento del datatable
+        "aProcessing": true, //activamos el procedimiento del datatable
         "aServerSide": true, //paginacion y filrado realizados por el server
-        dom: 'Bfrtip', //define los elementos del control de la tabla
+        dom: 'Bfrtip', //definimos los elementos del control de la tabla
         buttons: [
 
         ],
@@ -123,9 +123,9 @@ function listarArticulos() {
             ] //ordenar (columna, orden)
     }).DataTable();
 }
-//funcion para guardar y editar
+//funcion para guardaryeditar
 function guardaryeditar(e) {
-    e.preventDefault(); //no se activa la accion predeterminada 
+    e.preventDefault(); //no se activara la accion predeterminada 
     //$("#btnGuardar").prop("disabled",true);
     var formData = new FormData($("#formulario")[0]);
 
@@ -186,8 +186,8 @@ function anular(idingreso) {
     })
 }
 
-//declara variables necesarias para trabajar con las compras y sus detalles
-var impuesto = 0;
+//declaramos variables necesarias para trabajar con las compras y sus detalles
+var impuesto = 18;
 var cont = 0;
 var detalles = 0;
 
