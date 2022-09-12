@@ -147,7 +147,7 @@ switch ($_GET["op"]) {
 
 	break;
 	case 'salir':
-	   //limpiamos la variables de la secion
+	   //limpiamos la variables de la sesion
 	session_unset();
 
 	  //destruimos la sesion

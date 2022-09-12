@@ -103,9 +103,15 @@ INSERT INTO `detalle_ingreso` (`iddetalle_ingreso`, `idingreso`, `idarticulo`, `
 -- Disparadores `detalle_ingreso`
 --
 DELIMITER $$
+<<<<<<< HEAD
 CREATE TRIGGER `tr_updStockIngreso` AFTER INSERT ON `detalle_ingreso` FOR EACH ROW BEGIN
 UPDATE articulo SET stock=stock + NEW.cantidad
 WHERE articulo.idarticulo = NEW.idarticulo;
+=======
+CREATE TRIGGER `tr_updStockIngreso` AFTER INSERT ON `detalle_ingreso` FOR EACH ROW BEGIN
+UPDATE articulo SET stock=stock + NEW.cantidad
+WHERE articulo.idarticulo = NEW.idarticulo;
+>>>>>>> 721b7248ea3f5a95f2fd5d507ef5a72fc34295a6
 END
 $$
 DELIMITER ;
@@ -152,9 +158,15 @@ INSERT INTO `detalle_venta` (`iddetalle_venta`, `idventa`, `idarticulo`, `cantid
 -- Disparadores `detalle_venta`
 --
 DELIMITER $$
+<<<<<<< HEAD
 CREATE TRIGGER `tr_udpStockVenta` AFTER INSERT ON `detalle_venta` FOR EACH ROW BEGIN
 UPDATE articulo SET stock = stock - NEW.cantidad
 WHERE articulo.idarticulo = NEW.idarticulo;
+=======
+CREATE TRIGGER `tr_udpStockVenta` AFTER INSERT ON `detalle_venta` FOR EACH ROW BEGIN
+UPDATE articulo SET stock = stock - NEW.cantidad
+WHERE articulo.idarticulo = NEW.idarticulo;
+>>>>>>> 721b7248ea3f5a95f2fd5d507ef5a72fc34295a6
 END
 $$
 DELIMITER ;

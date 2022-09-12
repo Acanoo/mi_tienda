@@ -21,7 +21,7 @@ if (!isset($_SESSION['nombre'])) {
           <div class="col-md-12">
             <div class="box">
               <div class="box-header with-border">
-                <h1 class="box-title">Ingresos <button class="btn btn-success" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i>Agregar</button></h1>
+                <h1 class="box-title">Ingresos <button class="btn btn-success" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i>Agregar al Inventario</button></h1>
                 <div class="box-tools pull-right">
 
                 </div>
@@ -70,7 +70,6 @@ if (!isset($_SESSION['nombre'])) {
                   <div class="form-group col-lg-6 col-md-6 col-xs-12">
                     <label for="">Tipo Comprobante(*): </label>
                     <select name="tipo_comprobante" id="tipo_comprobante" class="form-control selectpicker" required>
-                      <option value="Boleta">Boleta</option>
                       <option value="Factura">Factura</option>
                       <option value="Ticket">Ticket</option>
                     </select>

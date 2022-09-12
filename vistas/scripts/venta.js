@@ -247,6 +247,7 @@ function modificarSubtotales() {
     }
 
     calcularTotales();
+    snapcode.activate
 }
 
 function calcularTotales() {

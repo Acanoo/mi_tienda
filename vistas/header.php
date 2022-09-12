@@ -9,7 +9,7 @@
  <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <title>SISVentas | Escritorio</title>
+   <title>SISTEMA DE VENTAS</title>
    <!-- Tell the browser to be responsive to screen width -->
    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
    <!-- Bootstrap 3.3.7 -->
@@ -39,7 +39,7 @@
        <!-- Logo -->
        <a href="escritorio.php" class="logo">
          <!-- mini logo for sidebar mini 50x50 pixels -->
-         <span class="logo-mini"><b>SISTEMA DE</b>VENTAS</span>
+         <span class="logo-mini">SISTEMA DE VENTAS</span>
          <!-- logo for regular state and mobile devices -->
          <span class="logo-lg"><b>SISTEMA</b>
        </a>
@@ -71,7 +71,7 @@
                  <!-- Menu Footer-->
                  <li class="user-footer">
                    <div class="pull-left">
-                     <a href="#" ,{idusuario : idusuario}" class="btn btn-default btn-flat">Perfil</a>
+                     <a href="#" ,{idusuario : idusuario} class="btn btn-default btn-flat">Perfil</a>
                    </div>
                    <div class="pull-right">
                      <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat">Salir</a>

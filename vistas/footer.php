@@ -1,7 +1,4 @@
   <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 0.0.1
-    </div>
     <strong>Autorepuestos Richard </a>.</strong> Todo los derechos
     reservados.
   </footer>
